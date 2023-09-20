@@ -19,6 +19,10 @@ class Bird {
     public static function create() {
         return new static();
     }
+
+    public function __construct() {
+    static::$instance_count++;
+}
 }
 
 class YellowBelliedFlyCatcher extends Bird {
