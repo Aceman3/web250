@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Folder Navigation</title>
+    <title>Assignments Links</title>
 </head>
 <body>
-    <h1>Folder Navigation</h1>
+    <h1>List of Assignments</h1>
     <ul>
         <?php
-        function listDirectory($path) {
-            $items = scandir($path);
-            
-            foreach ($items as $item) {
-                if ($item !== '.' && $item !== '..') {
-                    $itemPath = $path . '/' . $item;
-                    
-                    if (is_dir($itemPath)) {
-                        // If it's a directory, generate a link to navigate into it
-                        echo '<li><a href="' . $itemPath . '">' . $item . '</a></li>';
-                    } else {
-                        // If it's a file, display the file name
-                        echo '<li>' . $item . '</li>';
-                    }
-                }
+        $directory = 'C:/xampp/htdocs/web250'; // Path to the "web250" directory
+        $folders = scandir($directory);
+
+        foreach ($folders as $folder) {
+            $folderPath = $directory . '/' . $folder;
+            if (is_dir($folderPath) && $folder != '.' && $folder != '..' && $folder != '.git' && $folder != '.vs' && $folder !== 'private') {
+                // Generate links for folders (excluding ".", "..", ".git", and "private")
+                echo '<li><a href="' . $folder . '">' . $folder . '</a></li>';
             }
         }
-        
-        $startDirectory = 'web250'; // Relative path to the starting directory
-        listDirectory($startDirectory);
         ?>
     </ul>
 </body>
