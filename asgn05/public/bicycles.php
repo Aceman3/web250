@@ -43,7 +43,8 @@ $bike_array = $parser->parse();
         <td><?php echo h($bike->color); ?></td>
         <td><?php echo h($bike->weight_kg()) . ' / ' . h($bike->weight_lbs()); ?></td>
         <td><?php echo h($bike->condition()); ?></td>
-        <td><?php echo h(money_format('$%i', $bike->price)); ?></td>
+        <td><?php echo h('$' . number_format($bike->price, 2)); ?></td>
+
       </tr>
       <?php } ?>
 
