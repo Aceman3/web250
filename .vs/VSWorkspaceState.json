@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\asgn05"
+    "\\asgn06-bird-challenge\\private",
+    "\\asgn06-bird-challenge\\private\\classes",
+    "\\asgn06-bird-challenge\\public"
   ],
-  "SelectedNode": "\\gitignore",
   "PreviewInSolutionExplorer": false
 }
